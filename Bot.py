@@ -8,7 +8,7 @@ class Bot:
                      "content", "caring",
                      "trusting", "faithful",
                      "prepared", "sentimental",
-                     "anticipating"],
+                     "anticipating", "happy"],
         "negative": ["angry", "sad",
                      "annoyed", "lonely",
                      "afraid", "terrified",
@@ -39,9 +39,11 @@ class Bot:
                 negative_words.append(word)
             else:
                 neutral_words.append(word)
-        response = "you got "+str(len(positive_words)) + " pos words and " + str(len(negative_words)) + " neg words"
+        response = "you got " + str(len(positive_words)) + " pos words and " + str(len(negative_words)) + " neg words"
         # put a response for every word or smth
         print(positive_words, negative_words)
+        if len(positive_words) > len(negative_words):
+            pass
         # TODO: to see how many positive/... words are (firstly) to get a positive or negative response
         #  then see what words are and if there are any expressions or special words (start with big letter)
         #  get simple conversational things, like a list of I am, you are etc

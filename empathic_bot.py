@@ -1,5 +1,13 @@
+import pip
+import transformers as transformers
+from transformers.pipelines import conversational
+
 import Bot
 from Bot import *
+from transformers import pipeline, Conversation
+
+
+# pip install transformers
 
 
 def create_empathic_bot():
@@ -11,11 +19,24 @@ def create_empathic_bot():
 def start_chatbot(bot):
     print("Hello, I am Harley. How can I help you today?")
     bye_list = ["bye harley", "bye", "good bye"]
-
+    conversational_pipeline = pipeline("conversational")
     while True:
+
         user_input = input(">>User: ")
         if user_input.lower() in bye_list:
-            print("Jordan: Good bye and have a blessed day!")
+            print("Harley: Good bye and have a blessed day!")
             break
-        response = bot.save_chat(bot, user_input)
-        print("Jordan:", response)
+        # response = bot.save_chat(bot, user_input)
+        # print()
+        print("Harley:", conversational_pipeline(Conversation(user_input)))
+
+
+def trial():
+    conversational_pipeline = pipeline("conversational")
+    conv1_start = "Let's watch a movie tonight - any recommendations?"
+    conv2_start = "What's your favorite book?"
+
+    conv1 = Conversation(conv1_start)
+    conv2 = Conversation(conv2_start)
+
+    print(conversational_pipeline([conv1, conv2]))
