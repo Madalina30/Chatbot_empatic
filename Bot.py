@@ -56,9 +56,7 @@ class Bot:
         "personification": ["i'm", "i am"]
     }
 
-
     chat = {}
-
 
     def lemmatizer(text):
         text = re.sub('[' + string.punctuation + ']', '', text)
@@ -77,21 +75,27 @@ class Bot:
 
         return text
 
-
     def save_chat(self, user_input):
         self.chat[user_input] = self.speak(self, user_input)
         return self.chat[user_input]
 
-
     def speak(self, user_input):
-        # words = user_input.split()
         words = nltk.word_tokenize(user_input)
         pos_tag_words = nltk.pos_tag(words)
+        if not self.person_of_interest:
+            if len(pos_tag_words) == 1:
+                self.person_of_interest = pos_tag_words[0]
+            else:
+                for word in pos_tag_words:
+                    if "JJ" in word[1]:
+                        self.person_of_interest = word[0]
+                        return "Hi " + self.person_of_interest + "! How may I help you today?"
         # positive_words = []
         # negative_words = []
         # neutral_words = []
         # print(words)
-        # response = ""
+        response = ""
+
         # if "your" in words and "name" in words:
         #     response = "I'm Harley, glad to meet you! What is your name?"
         # elif "i'm" in words or "i am" in words:

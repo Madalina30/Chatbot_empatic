@@ -6,12 +6,13 @@ from Bot import *
 
 def create_empathic_bot():
     bot = Bot
-    print(bot.name)
+    # print(bot.name)
     return bot
 
 
 def start_chatbot(bot):
-    print("Hello, I am Harley. How can I help you today?")
+    set_name = 0
+    print("Harley: Hello, I am Harley. What is your name?")
     bye_list = ["bye harley", "bye", "good bye"]
     while True:
         user_input = input(">>User: ")
