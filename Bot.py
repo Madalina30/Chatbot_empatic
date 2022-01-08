@@ -1,3 +1,5 @@
+import random
+
 import nltk
 import re, string
 
@@ -100,7 +102,8 @@ class Bot:
             # print(word)
             if word in user_input:
                 # print("ok")
-                response += self.predefined_answers[word][0] + " "
+                rnd = random.randint(0, len(self.predefined_answers[word]) - 1)
+                response += self.predefined_answers[word][rnd] + " "
 
         # if "your" in words and "name" in words:
         #     response = "I'm Harley, glad to meet you! What is your name?"
