@@ -57,70 +57,70 @@ class Bot:
     }
 
 
-chat = {}
+    chat = {}
 
 
-def lemmatizer(text):
-    text = re.sub('[' + string.punctuation + ']', '', text)
-    text = re.sub(r"[-()\"#/@’;:<>{}`+=~|.!?,]", '', text)
-    text = text.lower().split()
+    def lemmatizer(text):
+        text = re.sub('[' + string.punctuation + ']', '', text)
+        text = re.sub(r"[-()\"#/@’;:<>{}`+=~|.!?,]", '', text)
+        text = text.lower().split()
 
-    stops = set(stopwords.words("english"))
-    text = [word for word in text if word not in stops]
-    text = " ".join(text)
-    text = re.sub(r'[^a-zA-Z\s]', u'', text, flags=re.UNICODE)
+        stops = set(stopwords.words("english"))
+        text = [word for word in text if word not in stops]
+        text = " ".join(text)
+        text = re.sub(r'[^a-zA-Z\s]', u'', text, flags=re.UNICODE)
 
-    text = text.split()
-    lemm = WordNetLemmatizer()
-    lemmatized = [lemm.lemmatize(word) for word in text if len(word) > 2]
-    text = " ".join(lemmatized)
+        text = text.split()
+        lemm = WordNetLemmatizer()
+        lemmatized = [lemm.lemmatize(word) for word in text if len(word) > 2]
+        text = " ".join(lemmatized)
 
-    return text
-
-
-def save_chat(self, user_input):
-    self.chat[user_input] = self.speak(self, user_input)
-    return self.chat[user_input]
+        return text
 
 
-def speak(self, user_input):
-    # words = user_input.split()
-    words = nltk.word_tokenize(self.lemmatizer(user_input))
-    pos_tag_words = nltk.pos_tag(words)
-    # positive_words = []
-    # negative_words = []
-    # neutral_words = []
-    # print(words)
-    # response = ""
-    # if "your" in words and "name" in words:
-    #     response = "I'm Harley, glad to meet you! What is your name?"
-    # elif "i'm" in words or "i am" in words:
-    #     self.person_of_interest = words[-1]
-    # elif "my" in words and "name" in words:
-    #     self.person_of_interest = words[-1]
-    #     response = "Hi " + self.person_of_interest + "!"
-    # else:
-    #     for word in words:
-    #         if word in self.emotions["positive"]:
-    #             positive_words.append(word)
-    #         elif word in self.emotions["negative"]:
-    #             negative_words.append(word)
-    #         elif word in self.emotions["greetings"]:
-    #             response = "Hello there, how are you today?"
-    #             break
-    #         else:
-    #             # neutral_words.append(word)
-    #             response = "I'm sorry, I did not quite understand that."
-    #     # response = "you got " + str(len(positive_words)) + " pos words and " + str(len(negative_words)) + " neg words"
-    #     # put a response for every word or smth
-    # print(positive_words, negative_words)
-    # if len(positive_words) > len(negative_words):
-    #     pass
-    # # TODO: to see how many positive/... words are (firstly) to get a positive or negative response
-    # #  then see what words are and if there are any expressions or special words (start with big letter)
-    # #  get simple conversational things, like a list of I am, you are etc
-    # #  a list of basic conversations for the beginning and the end of the conversation
-    # #  get a strategy of how to respond with empathy - get a list of examples of a daily conv
-    # #  be careful with , and .
-    # return response
-    return pos_tag_words
+    def save_chat(self, user_input):
+        self.chat[user_input] = self.speak(self, user_input)
+        return self.chat[user_input]
+
+
+    def speak(self, user_input):
+        # words = user_input.split()
+        words = nltk.word_tokenize(user_input)
+        pos_tag_words = nltk.pos_tag(words)
+        # positive_words = []
+        # negative_words = []
+        # neutral_words = []
+        # print(words)
+        # response = ""
+        # if "your" in words and "name" in words:
+        #     response = "I'm Harley, glad to meet you! What is your name?"
+        # elif "i'm" in words or "i am" in words:
+        #     self.person_of_interest = words[-1]
+        # elif "my" in words and "name" in words:
+        #     self.person_of_interest = words[-1]
+        #     response = "Hi " + self.person_of_interest + "!"
+        # else:
+        #     for word in words:
+        #         if word in self.emotions["positive"]:
+        #             positive_words.append(word)
+        #         elif word in self.emotions["negative"]:
+        #             negative_words.append(word)
+        #         elif word in self.emotions["greetings"]:
+        #             response = "Hello there, how are you today?"
+        #             break
+        #         else:
+        #             # neutral_words.append(word)
+        #             response = "I'm sorry, I did not quite understand that."
+        #     # response = "you got " + str(len(positive_words)) + " pos words and " + str(len(negative_words)) + " neg words"
+        #     # put a response for every word or smth
+        # print(positive_words, negative_words)
+        # if len(positive_words) > len(negative_words):
+        #     pass
+        # # TODO: to see how many positive/... words are (firstly) to get a positive or negative response
+        # #  then see what words are and if there are any expressions or special words (start with big letter)
+        # #  get simple conversational things, like a list of I am, you are etc
+        # #  a list of basic conversations for the beginning and the end of the conversation
+        # #  get a strategy of how to respond with empathy - get a list of examples of a daily conv
+        # #  be careful with , and .
+        # return response
+        return pos_tag_words
