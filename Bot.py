@@ -81,6 +81,7 @@ class Bot:
 
     def speak(self, user_input):
         words = nltk.word_tokenize(user_input)
+        print(words)
         pos_tag_words = nltk.pos_tag(words)
         if not self.person_of_interest:
             if len(pos_tag_words) == 1:
@@ -95,6 +96,11 @@ class Bot:
         # neutral_words = []
         # print(words)
         response = ""
+        for word in self.predefined_answers:
+            # print(word)
+            if word in user_input:
+                # print("ok")
+                response += self.predefined_answers[word][0] + " "
 
         # if "your" in words and "name" in words:
         #     response = "I'm Harley, glad to meet you! What is your name?"
@@ -127,4 +133,4 @@ class Bot:
         # #  get a strategy of how to respond with empathy - get a list of examples of a daily conv
         # #  be careful with , and .
         # return response
-        return pos_tag_words
+        return response
