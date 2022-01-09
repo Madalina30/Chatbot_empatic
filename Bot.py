@@ -10,6 +10,22 @@ from nltk.corpus import stopwords
 class Bot:
     name = "Harley"
     person_of_interest = ""
+    books = {
+        "sad": [
+            "I would recommend you ‘Everything happens for a reason’ by Kate Bowler.Read a little resume about it.You will love it!",
+            "I would really like for you to read ‘The book thief’ by Markus Zusak if you haven’t done it already! The action happens in a time of war in Germany, when bombs stroke when you would expect the least.It is about a young girl that really likes to read, but does not have the possibility to buy them.She finds a way to read the books, alongside with a young boy.You need to read it to find out more, I don’t want to spoiler it!",
+            "You need to read ‘Wonder’ by R.J.Palacio! It is a story told from the perspective of a ten-year-old with jarring facial anomalies and his various family members and friends."],
+        "romance": [
+            "‘To all the boys I loved before’ by Jenny Han is a beautiful romance book! Read it before seeing the movie!",
+            "‘After’ by Anna Todd (4 books actually) is a really nice book that first appeared on wattpad, the most popular platform where you can read tons of books, paid or not, made by a lot of people of different ages and nationalities.",
+            "‘The hating game’ by Sally Thorne is about 2 co - workers that have a rivalry as bitter as they come, especially as they compete for the same promotion.At least, it starts out that way!"],
+        "mystery": [
+            "‘Gone girl’ by Gillian Flyn is the best mystery book. It is about a wife that has gone missing and her husband that starts searching for her by looking through their anniversary gift messages.If I haven’t convinced you, the husband also has a mistress! Enjoy!",
+            "‘Da vinci code’ by Dan Brown is a must read mystery book.Discover it!",
+            "I would recommend you ‘Big little lies’ by Liane Moriarty.It is about a single mom that sends her son to kindergarten and befriends 2 mothers.Along with their friendships is an array of family dramas, from ex- or abusive husbands of dark pasts.More you will discover by reading it!"],
+        "horror": ["‘Bird box’ by Josh Maler is a very good horror book! Read it and you won’t regret it!",
+                   "‘You need to read ‘The shinning’ by Stephen King! It will the skin out of you!"]
+    }
     predefined_answers = {
         "sad": ["You need to be cheered up!", ],
         "bad mood": ["Maybe I can help you turn your bad mood into a good one!", ],
@@ -34,6 +50,7 @@ class Bot:
         "embarrassed": ["It happens! You can get through this and I will be here for you!"],
         "angry": ["Being angry is not a good thing! You need to start thinking positive!",
                   "Anger will make you do bad things. Try to think at something positive!"]
+
     }
     emotions = {
         "positive": ["surprised", "excited",  # :["what to say when here"]????
