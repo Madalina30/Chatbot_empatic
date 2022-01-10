@@ -24,7 +24,10 @@ class Bot:
             "‘Da vinci code’ by Dan Brown is a must read mystery book.Discover it!",
             "I would recommend you ‘Big little lies’ by Liane Moriarty.It is about a single mom that sends her son to kindergarten and befriends 2 mothers.Along with their friendships is an array of family dramas, from ex- or abusive husbands of dark pasts.More you will discover by reading it!"],
         "horror": ["‘Bird box’ by Josh Maler is a very good horror book! Read it and you won’t regret it!",
-                   "‘You need to read ‘The shinning’ by Stephen King! It will the skin out of you!"]
+                   "‘You need to read ‘The shinning’ by Stephen King! It will the skin out of you!"],
+        "fantasy": [
+            "I would really recommend you the books ‘Witch and wizard’ by James Patterson.It is a wonderful collection that will send you in a different world, where magic gets punished and you will discover the life of magicians",
+            "‘Beautiful creatures’ by Kami Garcia is a romance fantasy with lots of adventures of a beginning witch that is haunted by an old curse, as it was supposed to be.As it is a 5-book-series, the story changes as you advance in the book and the magic gets stronger, but the love too."]
     }
     predefined_answers = {
         "sad": ["You need to be cheered up!", ],
