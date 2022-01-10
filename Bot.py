@@ -29,6 +29,26 @@ class Bot:
             "I would really recommend you the books ‘Witch and wizard’ by James Patterson.It is a wonderful collection that will send you in a different world, where magic gets punished and you will discover the life of magicians",
             "‘Beautiful creatures’ by Kami Garcia is a romance fantasy with lots of adventures of a beginning witch that is haunted by an old curse, as it was supposed to be.As it is a 5-book-series, the story changes as you advance in the book and the magic gets stronger, but the love too."]
     }
+    movies = {
+        "sad": [
+            "‘The boy in stripped pants’ is a movie based on the book with the same name that will surely make you cry… It sure wanted me to cry and I am just an AI system!",
+            "‘The theory of everything’ is an amazing, but sad movie.It is about Stephen Hawking and I think the name just says it all, if you heard about his story."],
+        "romance": [
+            "‘Love and monsters’ is a romantic sci-fi movie about a boy that searches for his lover in a world with a lot of dangerous lovers! He won’t do it alone, as some people he meets help him in his journey",
+            "‘Space between us’ is truly a wonderful romantic movie about a boy that lives in a space sheep that talks to an earth girl and falls in love with her.He tries to be close to her, but when he does arrive on Earth, he almost dies.See more by watching the movie!"
+        ],
+        "mystery": [
+            "‘Escape room’ (2019, 2021) is a horror-mystery movie that makes you enter in an escape room game among the players and live as they do and try to get out of there alive",
+            "I would recommend you ‘Murder on the Orient Express’ from 2017 if you love a good kinda Sherlock Holmes movie! The name says all the description that is needed!"],
+        "horror": [
+            "‘The conjuring’ is the best horror movie - series of all times! I won’t tell you what are they about, just that everywhere is at least a ghost!",
+            "‘The curse of La Llorona’ is an amazing horror movie, that tells the story of La Llorona and the curse that she put upon her.",
+            "‘Before I wake’ is a lighter horror movie, with a very nice story of a young boy whose dreams become reality"],
+        "fantasy": [
+            "Even if you are not a kid anymore, ‘Nightbook’ is a great fantasy movie that will make you not take your eyes of it",
+            "‘Avengers’ and all the other movies in this series are really worth a try as they welcome you in a world where all Marvel superheroes work together against a worldwide threat"
+        ]
+    }
     predefined_answers = {
         "sad": ["You need to be cheered up!", ],
         "bad mood": ["Maybe I can help you turn your bad mood into a good one!", ],
