@@ -54,13 +54,17 @@ class Bot:
         "bad mood": ["Maybe I can help you turn your bad mood into a good one!", ],
         "here for me": [
             " I will be here for you, as there can be jokes that can trigger even bad emotions for you. We will try one kind of meditation. Think that you are in the clouds where it is all quite and the only thing that you can hear are some birds that are flying close to you. From there, you can see some kind of paradise with candies, palms, beaches and also hear from far the waves that are crushing. You are flying to that paradise as the clouds are taking you there and you can touch the sea and the warm sand with your feets. Beside you, there is a sand castle the size of your home and you explore it. How do you feel now?", ],
-        "joke": ["", ],
+        "joke": ["I invented a new word! Plagiarism!",
+                 "Did you hear about the mathematician who’s afraid of negative numbers? He’ll stop at nothing to avoid them.",
+                 "Why do we tell actors to “break a leg?” Because every play has a cast. Here are some dark jokes to check out if you have a morbid sense of humor.",
+                 "Hear about the new restaurant called Karma? There’s no menu: You get what you deserve.",
+                 "Did you hear about the actor who fell through the floorboards? He was just going through a stage."],
         "thank": ["It is my pleasure to help you!", "You're welcome!", "You can count anytime for me!",
                   "No need to thank me, it is my job!", ],
         "happy": ["I am glad you feel this way!", "You make me happy!", ],
         "will not judge": ["I will never judge you!",
                            "You are my favorite person, I will never do something to disappoint you!"],
-        "jealous": ["", ],
+        "jealous": ["It's normal to wish for something better, but you can achieve it as well!", ],
         "lonely": ["I am here for you! You will never be lonely!"],
         "sentimental": ["It is a natural thing for a person, being sentimental!",
                         "You don't need to be afraid by it, it is something normal!"],
@@ -69,7 +73,7 @@ class Bot:
         "afraid": ["You don't need to be afraid!", "I am here for you!", "You really don't need to be afraid about x!"],
         "confident": ["Being confident is the right way to be! It will help you be successful!",
                       "That is no other way to feel than confident! It will help you everytime you feel like you can't do something!"],
-        "impressed": [""],
+        "impressed": ["A good impression I guess!"],
         "embarrassed": ["It happens! You can get through this and I will be here for you!"],
         "angry": ["Being angry is not a good thing! You need to start thinking positive!",
                   "Anger will make you do bad things. Try to think at something positive!"]
@@ -123,7 +127,7 @@ class Bot:
 
     def speak(self, user_input):
         words = nltk.word_tokenize(user_input)
-        print(words)
+        # print(words)
         pos_tag_words = nltk.pos_tag(words)
         if not self.person_of_interest:
             if len(pos_tag_words) == 1:
@@ -138,12 +142,18 @@ class Bot:
         # neutral_words = []
         # print(words)
         response = ""
-        for word in self.predefined_answers:
-            # print(word)
-            if word in user_input:
-                # print("ok")
-                rnd = random.randint(0, len(self.predefined_answers[word]) - 1)
-                response += self.predefined_answers[word][rnd] + " "
+        if "book" in user_input or "books" in user_input:
+            for word in self.books:
+                response += random.choice(self.books[word]) + " "
+        elif "movie" in user_input or "movies" in user_input:
+            for word in self.movies:
+                response += random.choice(self.movies[word]) + " "
+        else:
+            for word in self.predefined_answers:
+                # print(word)
+                if word in user_input:
+                    # print("ok")
+                    response += random.choice(self.predefined_answers[word]) + " "
 
         # if "your" in words and "name" in words:
         #     response = "I'm Harley, glad to meet you! What is your name?"
