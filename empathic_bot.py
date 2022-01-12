@@ -21,14 +21,3 @@ def start_chatbot(bot):
             break
         response = bot.save_chat(bot, user_input)
         print(response)
-
-
-# def trial():
-#     conversational_pipeline = pipeline("conversational")
-#     conv1_start = "Let's watch a movie tonight - any recommendations?"
-#     conv2_start = "What's your favorite book?"
-#
-#     conv1 = Conversation(conv1_start)
-#     conv2 = Conversation(conv2_start)
-#
-#     print(conversational_pipeline([conv1, conv2]))
