@@ -2,11 +2,8 @@ import Bot
 from Bot import *
 
 
-
-
 def create_empathic_bot():
     bot = Bot
-    # print(bot.name)
     return bot
 
 

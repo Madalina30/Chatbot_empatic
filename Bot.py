@@ -137,10 +137,7 @@ class Bot:
                     if "JJ" in word[1]:
                         self.person_of_interest = word[0]
                         return "Hi " + self.person_of_interest + "! How may I help you today?"
-        # positive_words = []
-        # negative_words = []
-        # neutral_words = []
-        # print(words)
+
         response = ""
         if "book" in user_input or "books" in user_input:
             for word in self.books:
@@ -154,36 +151,4 @@ class Bot:
                 if word in user_input:
                     # print("ok")
                     response += random.choice(self.predefined_answers[word]) + " "
-
-        # if "your" in words and "name" in words:
-        #     response = "I'm Harley, glad to meet you! What is your name?"
-        # elif "i'm" in words or "i am" in words:
-        #     self.person_of_interest = words[-1]
-        # elif "my" in words and "name" in words:
-        #     self.person_of_interest = words[-1]
-        #     response = "Hi " + self.person_of_interest + "!"
-        # else:
-        #     for word in words:
-        #         if word in self.emotions["positive"]:
-        #             positive_words.append(word)
-        #         elif word in self.emotions["negative"]:
-        #             negative_words.append(word)
-        #         elif word in self.emotions["greetings"]:
-        #             response = "Hello there, how are you today?"
-        #             break
-        #         else:
-        #             # neutral_words.append(word)
-        #             response = "I'm sorry, I did not quite understand that."
-        #     # response = "you got " + str(len(positive_words)) + " pos words and " + str(len(negative_words)) + " neg words"
-        #     # put a response for every word or smth
-        # print(positive_words, negative_words)
-        # if len(positive_words) > len(negative_words):
-        #     pass
-        # # TODO: to see how many positive/... words are (firstly) to get a positive or negative response
-        # #  then see what words are and if there are any expressions or special words (start with big letter)
-        # #  get simple conversational things, like a list of I am, you are etc
-        # #  a list of basic conversations for the beginning and the end of the conversation
-        # #  get a strategy of how to respond with empathy - get a list of examples of a daily conv
-        # #  be careful with , and .
-        # return response
         return response
